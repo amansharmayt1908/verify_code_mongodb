@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose"); // Add mongoose import
 const app = express();
-
+mongoose.set('strictQuery', true);
 // MongoDB connection
 mongoose.connect(
     "mongodb+srv://amansharmayt19:nvrQpvCAPAWSEh9C@scripterx.7nhap.mongodb.net/courses?retryWrites=true&w=majority",

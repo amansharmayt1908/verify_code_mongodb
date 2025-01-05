@@ -1,13 +1,6 @@
-
+const express = require("express");
 const mongoose = require("mongoose"); // Add mongoose import
-const path = require("path");
-const cors = require("cors"); // Add cors import
-
-
-// Middleware
-
-app.use(cors());
-
+const app = express();
 
 // MongoDB connection
 mongoose.connect(
@@ -29,7 +22,7 @@ const keySchema = new mongoose.Schema({
 const Key = mongoose.model("Key", keySchema);
 
 // Define route to verify code
-app.post("/verify-code", async (req, res) => {
+app.post("/verify-code-mongodb.onrender", async (req, res) => {
     try {
         const { code } = req.body;
         const result = await Key.findOne({ code: code });

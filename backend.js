@@ -1,7 +1,13 @@
 const express = require("express");
 const mongoose = require("mongoose"); // Add mongoose import
 const app = express();
-mongoose.set('strictQuery', true);
+app.use(express.json()); // Add JSON middleware
+
+app.get("/", (req, res) => {
+    
+
+    
+
 // MongoDB connection
 mongoose.connect(
     "mongodb+srv://amansharmayt19:nvrQpvCAPAWSEh9C@scripterx.7nhap.mongodb.net/courses?retryWrites=true&w=majority",
@@ -37,3 +43,8 @@ app.post("/verify-code-mongodb.onrender", async (req, res) => {
     }
 });
 
+});
+
+app.listen(5000, () => {
+    console.log("Server is running on port 5000");
+});

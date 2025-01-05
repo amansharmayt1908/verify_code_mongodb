@@ -1,7 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose"); // Add mongoose import
 const app = express();
+const cors = require("cors");
 app.use(express.json()); // Add JSON middleware
+app.use(cors());
 
 app.get("/", (req, res) => {
     
